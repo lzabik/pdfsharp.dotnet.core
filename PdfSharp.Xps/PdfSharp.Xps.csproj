@@ -1,0 +1,61 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>empira Software GmbH, Łukasz Ząbik</Authors>
+    <PackageId>PdfSharp.Xps.dotNet.Core</PackageId>
+    <Description>A .NET library for processing PDF.</Description>
+    <PackageTags>PDF, PDFsharp, creation, conversion</PackageTags>
+    <PackageProjectUrl>http://www.pdfsharp.net/</PackageProjectUrl>
+    <PackageLicenseExpression></PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENCE.md</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/lzabik/pdfsharp.dotnet.core.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;WPF</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;WPF</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="PdfSharp.XPS.Test\**" />
+    <Compile Remove="PdfSharp.Xps.XpsModel\enums\**" />
+    <Compile Remove="PdfSharp\**" />
+    <EmbeddedResource Remove="PdfSharp.XPS.Test\**" />
+    <EmbeddedResource Remove="PdfSharp.Xps.XpsModel\enums\**" />
+    <EmbeddedResource Remove="PdfSharp\**" />
+    <None Remove="PdfSharp.XPS.Test\**" />
+    <None Remove="PdfSharp.Xps.XpsModel\enums\**" />
+    <None Remove="PdfSharp\**" />
+    <None Include="..\LICENCE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <Page Remove="PdfSharp.XPS.Test\**" />
+    <Page Remove="PdfSharp.Xps.XpsModel\enums\**" />
+    <Page Remove="PdfSharp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="AssemblyInfo-AG.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="PdfSharp.Xps.XpsModel\enums\ColorType.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PdfSharp\PdfSharpWPF.csproj" />
+  </ItemGroup>
+
+</Project>
