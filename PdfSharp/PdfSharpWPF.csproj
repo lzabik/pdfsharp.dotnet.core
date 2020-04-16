@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>PdfSharpWPF.dotNet.Core</PackageId>
@@ -21,6 +21,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DefineConstants>TRACE;WPF</DefineConstants>
+    <DocumentationFile>bin\Release\netcoreapp3.1\PdfSharpWPF.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
